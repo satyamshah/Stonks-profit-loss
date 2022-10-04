@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+}
+
+.label, .input, .checkBtn {
+    margin: auto;
+    display: block;
+    font-size: 1.5rem;
+}
+
+.label, .input {
+    padding: 0.4rem;
+}
+
+.checkBtn {
+    margin-top: 1rem;
+    padding: 0.5rem
+}
+
+.input, .checkBtn {
+    border-radius: 1rem
+}
+
+.output {
+    max-width: 60rem;
+    height: 3.5rem;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    display: block;
+    font-size: 1.5rem
+}
+
+.footer ul {
+    padding-inline-start: 0rem;
+}
+
+.list-inline {
+    display: inline;
+}
