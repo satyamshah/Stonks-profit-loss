@@ -31,12 +31,12 @@ function calculateProfitOrLoss(initial, current, quantity) {
 checkButton.addEventListener("click", function checkProfitOrLossHandler() {
     if(initialPrice.value && currentPrice.value && quantityOfStock.value)
     {
-        if (Number(initialPrice.value) > 0 && Number(currentPrice.value) > 0 && Number(quantityOfStock.value)) 
+        if (Number(initialPrice.value) >= 0 && Number(currentPrice.value) >= 0 && Number(quantityOfStock.value)>=0) 
         {
             calculateProfitOrLoss(Number(initialPrice.value), Number(currentPrice.value), Number(quantityOfStock.value))
         } else
         {
-          showMessage("Price/Quantity cannot be negative");
+          showMessage("Price or Quantity cannot be negative/Zero");
         }
     } else {
         showMessage("Please enter all the inputs")
