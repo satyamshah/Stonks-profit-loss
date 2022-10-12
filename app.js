@@ -11,14 +11,14 @@ const showMessage = (message) => output.innerText = message;
 function calculateProfitOrLoss(initial, current, quantity) {
     if(initial > current) {
         var loss = (initial - current) * quantity;
-        var lossPercentage = (loss / initial*quantity) * 100;
+        var lossPercentage = (loss / (initial*quantity)) * 100;
         lossPercentage = lossPercentage.toFixed(2);
         element.style.backgroundColor = 'red';
         showMessage("Oops! You faced a loss of Rs." + loss + " and the loss percentage is " + lossPercentage + "%.")
         
     } else if(current > initial) {
         var profit = (current - initial) * quantity;
-        var profitPercentage = (profit / initial*quantity) * 100;
+        var profitPercentage = (profit / (initial*quantity)) * 100;
         profitPercentage = profitPercentage.toFixed(2);
         element.style.backgroundColor = 'green';
         showMessage("Yay!!! You got a profit of Rs." + profit + " and the profit percentage is " + profitPercentage + "%.")
@@ -29,9 +29,10 @@ function calculateProfitOrLoss(initial, current, quantity) {
 }
 
 checkButton.addEventListener("click", function checkProfitOrLossHandler() {
-    if(initialPrice.value && currentPrice.value && quantityOfStock.value){
-
-        if (initialPrice > 0 && stocksQuantity > 0 && currentPrice > 0) {
+    if(initialPrice.value && currentPrice.value && quantityOfStock.value)
+    {
+        if (Number(initialPrice.value) > 0 && Number(currentPrice.value) > 0 && Number(quantityOfStock.value)) 
+        {
             calculateProfitOrLoss(Number(initialPrice.value), Number(currentPrice.value), Number(quantityOfStock.value))
         } else
         {
